@@ -70,15 +70,18 @@ namespace WinFormsApp1
                 {
                     if (Discriminant() > 0)
                     {
-                        double x1 = (-B + Math.Sqrt(Discriminant())) / 2 * A;
-                        double x2 = (-B - Math.Sqrt(Discriminant())) / 2 * A;
-                        return $"Корни уравнения X = {x1} и X = {x2}";
+                        double x1 = (-B + Math.Sqrt(Discriminant())) / (2 * A);
+                        double x2 = (-B - Math.Sqrt(Discriminant())) / (2 * A);
+                        string x1_a = Math.Round(x1, 2).ToString();
+                        string x2_a = Math.Round(x2, 2).ToString();
+                        return $"Корни уравнения X = {x1_a} и X = {x2_a}";
                     }
 
                     if (Discriminant() == 0)
                     {
                         double x = -B / (2 * A);
-                        return $"Корень уравнения X = {x}";
+                        string x_a = Math.Round(x, 2).ToString();
+                        return $"Корень уравнения X = {x_a}";
                     }
 
                     if (Discriminant() < 0)
